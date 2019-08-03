@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Activities.CallScreenActivity">
+
+    <com.genband.mobile.core.webrtc.view.VideoView
+        android:id="@+id/localVideoView"
+        android:layout_width="104dp"
+        android:layout_height="160dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="changeCamera"
+        app:layout_constraintBottom_toBottomOf="@+id/remoteVideoView"
+        app:layout_constraintEnd_toEndOf="@+id/remoteVideoView" />
+
+    <com.genband.mobile.core.webrtc.view.VideoView
+        android:id="@+id/remoteVideoView"
+        android:layout_width="wrap_content"
+        android:layout_height="731dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibtnMute"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/my_other_cool_button"
+        android:onClick="muteCall"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toTopOf="@+id/localVideoView"
+        app:layout_constraintStart_toStartOf="@+id/remoteVideoView"
+        app:srcCompat="@drawable/ic_mute" />
+
+    <ImageButton
+        android:id="@+id/ibtnStop"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/my_other_cool_button"
+        android:onClick="stopVideo"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintEnd_toStartOf="@+id/ibtnHold"
+        app:layout_constraintStart_toEndOf="@+id/ibtnMute"
+        app:layout_constraintTop_toTopOf="@+id/ibtnHold"
+        app:srcCompat="@drawable/ic_stop" />
+
+    <ImageButton
+        android:id="@+id/ibtnHold"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/my_other_cool_button"
+        android:onClick="holdCall"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toTopOf="@+id/localVideoView"
+        app:layout_constraintEnd_toEndOf="@+id/remoteVideoView"
+        app:srcCompat="@drawable/ic_hold" />
+
+    <ImageButton
+        android:id="@+id/ibtnEnd"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/my_other_cool_button"
+        android:onClick="endCall"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@+id/remoteVideoView"
+        app:layout_constraintEnd_toEndOf="@+id/ibtnStop"
+        app:layout_constraintTop_toBottomOf="@+id/ibtnStop"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_end" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
