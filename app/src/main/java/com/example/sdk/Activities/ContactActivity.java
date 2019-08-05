@@ -136,9 +136,6 @@ public class ContactActivity extends AppCompatActivity {
             public void onSuccess() {
                 //Handle unregistration success
                 System.out.println("---------------UNREGISTER SUCCESS---------------");
-                Intent i = new Intent(context, LoginActivity.class);
-                context.startActivity(i);
-                finish();
             }
 
             @Override
